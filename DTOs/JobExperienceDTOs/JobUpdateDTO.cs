@@ -1,9 +1,8 @@
-﻿using RestApiLabb1.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace RestApiLabb1.DTOs.JobExperienceDTOs
 {
-    public class JobExperienceDTO
+    public class JobUpdateDTO
     {
         [Required]
         [MaxLength(100)]
@@ -13,7 +12,6 @@ namespace RestApiLabb1.DTOs.JobExperienceDTOs
         [MaxLength(50)]
         public string CompanyName { get; set; }
 
-        public int Year { get; set; }
-
+        public int? Year { get; set; }
     }
 }

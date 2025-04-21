@@ -2,7 +2,7 @@
 using RestApiLabb1.DTOs.JobExperienceDTOs;
 using RestApiLabb1.Models;
 
-namespace RestApiLabb1.Endpoints
+namespace RestApiLabb1.Endpoints.Jobs
 {
     public class JobExperienceEndpoints
     {
@@ -22,7 +22,7 @@ namespace RestApiLabb1.Endpoints
                     JobTitle = jobExperienceDTO.JobTitle,
                     CompanyName = jobExperienceDTO.CompanyName,
                     Year = jobExperienceDTO.Year,
-                    PersonalInfoId = personId
+                    PersonalInfoId_Fk = personId
                 };
 
                 var response = new JobExperienceResoponsDTO
@@ -36,8 +36,9 @@ namespace RestApiLabb1.Endpoints
                 context.JobExperiences.Add(jobexperience);
                 await context.SaveChangesAsync();
 
-                return Results.Created($"/api/educations/{jobexperience.Id}", response);
-            });
+                return Results.Created($"/api/educations/{jobexperience.JobId}", response);
+
+            }).WithTags("Jobb");
         }
     }
 }

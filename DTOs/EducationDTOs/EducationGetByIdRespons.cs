@@ -1,11 +1,10 @@
-﻿using RestApiLabb1.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace RestApiLabb1.DTOs.EducationDTOs
 {
-    public class EducationDTO
+    public class EducationGetByIdRespons
     {
-
+        public string Massage { get; set; }
         public int EducationId { get; set; }
 
         [Required]

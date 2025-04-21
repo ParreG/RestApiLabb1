@@ -1,7 +1,10 @@
 
 using Microsoft.EntityFrameworkCore;
 using RestApiLabb1.Data;
-using RestApiLabb1.Endpoints;
+using RestApiLabb1.Endpoints.Education;
+using RestApiLabb1.Endpoints.EducationEndpoints;
+using RestApiLabb1.Endpoints.Jobs;
+using RestApiLabb1.Endpoints.Person;
 using RestApiLabb1.Services;
 
 namespace RestApiLabb1
@@ -43,15 +46,23 @@ namespace RestApiLabb1
 
             app.UseAuthorization();
 
-            PersonEndpoints.RegisterEndpoints(app);
-            EducationEndpoints.RegisterEducationEndpoints(app);
-            JobExperienceEndpoints.RegisterJobExperienceEndpoints(app);
+            GetAllPersonEndpoint.RegisterFindAllEndpoint(app);
+            AddPersonEndpoint.RegisterNewPersonEndpoint(app);
 
-            // Ta bort en utbildning
-            // Ta bort en yrkeserfarenhet
-            // Hämta bara en person och all dess info baserat på en person ID
-            // Hämta en specifik jobberfarenhet och byta information i den. 
-            // 
+
+            AddEducationEndpoint.RegisterAddEducationEndpoint(app);
+            GetAllEducationsForPersonEndpoint.RegisterGetAllEdcationByID(app);
+            DeleteEducationEndpoint.RegisterDeleteEducationEndpoint(app);
+            ChangeEducationEndpoint.RegisterChangeEducationEndpoint(app);
+            GetSingleEducationEndpoint.RegisterSingleEducationByIdEndpoint(app);
+
+            JobExperienceEndpoints.RegisterJobExperienceEndpoints(app);
+            DeleteJobExperienceEndpoint.RegisterDeleteJobEndpoint(app);
+            GetAllJobExperiencesForPersonEndpoint.RegisterGetJobExperienceById(app);
+            GetSingleJobExperienceEndpoint.RegisterGetJobExperieceById(app);
+            ChangeJobExperienceEndpoint.RegisterJobExperienceChangeEndpoint(app);
+
+
 
             app.Run();
 

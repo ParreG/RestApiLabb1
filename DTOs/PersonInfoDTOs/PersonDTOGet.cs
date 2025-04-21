@@ -25,6 +25,6 @@ namespace RestApiLabb1.DTOs.PersonInfoDTOs
 
         public List<EducationDTO> Educations { get; set; } = new List<EducationDTO>();
 
-        public List<JobExperienceDTO> JobExperiences { get; set; } = new List<JobExperienceDTO>();
+        public List<JobExperienceResoponsDTO> JobExperiences { get; set; } = new List<JobExperienceResoponsDTO>();
     }
 }

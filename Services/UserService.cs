@@ -24,7 +24,7 @@ namespace RestApiLabb1.Services
                 .Include(p => p.JobExperiences)
                 .Select(p => new PersonDTOGet
                 {
-                    Id = p.Id,
+                    Id = p.PersonId,
                     Name = p.Name,
                     Email = p.Email,
                     Phone = p.Phone,
@@ -32,16 +32,16 @@ namespace RestApiLabb1.Services
 
                     Educations = p.Educations.Select(e => new EducationDTO
                     {
-                        id = e.Id,
+                        EducationId = e.EducationId, // Denna måste finnas så att den syns i get men inte i post education!
                         SchoolName = e.SchoolName,
                         Degree = e.Degree,
                         StartDate = e.StartDate,
                         EndDate = e.EndDate
                     }).ToList(),
 
-                    JobExperiences = p.JobExperiences.Select(j => new JobExperienceDTO
+                    JobExperiences = p.JobExperiences.Select(j => new JobExperienceResoponsDTO
                     {
-                        id = j.Id,
+                        id = j.JobId,
                         CompanyName = j.CompanyName,
                         JobTitle = j.JobTitle,
                         Year = j.Year

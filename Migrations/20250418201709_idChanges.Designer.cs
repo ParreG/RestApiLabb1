@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApiLabb1.Data;
 
@@ -11,9 +12,11 @@ using RestApiLabb1.Data;
 namespace RestApiLabb1.Migrations
 {
     [DbContext(typeof(RestApiDBContext))]
-    partial class RestApiDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250418201709_idChanges")]
+    partial class idChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

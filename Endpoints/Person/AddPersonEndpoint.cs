@@ -7,11 +7,11 @@ using RestApiLabb1.DTOs.PersonInfoDTOs;
 
 
 
-namespace RestApiLabb1.Endpoints
+namespace RestApiLabb1.Endpoints.Person
 {
-    public class PersonEndpoints
+    public class AddPersonEndpoint
     {
-        public static void RegisterEndpoints(WebApplication app)
+        public static void RegisterNewPersonEndpoint(WebApplication app)
         {
             app.MapPost("/NyPerson", async (PersonDTOPost newPerson, RestApiDBContext context) =>
             {
@@ -38,19 +38,7 @@ namespace RestApiLabb1.Endpoints
                 await context.SaveChangesAsync();
 
                 return Results.Ok($"{person.Name} har lagts till. För att lägga till utbildningar och arbetslivserfarenheter gå till det specifika Post endpointen!");
-            });
-
-            app.MapGet("/PersonInformation", async (UserService userService) =>
-            {
-                var allPersonalInfo = await userService.GetPersonalInfo();
-
-                return Results.Ok(allPersonalInfo);
-            });
-
-
-            // I fortsättning ska varje användare med sitt id kunna lägga till utbildning och arbetslivserfarenhet på sig själv. 
-
-
+            }).WithTags("1. Person");
         }
     }
 }
