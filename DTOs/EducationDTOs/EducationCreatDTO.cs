@@ -1,13 +1,10 @@
-﻿using RestApiLabb1.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace RestApiLabb1.DTOs.EducationDTOs
 {
-    public class EducationDTO
+    // använder i AddEducationEndpoint
+    public class EducationCreatDTO
     {
-
-        public int EducationId { get; set; }
-
         [Required]
         [MaxLength(200)]
         public string SchoolName { get; set; }

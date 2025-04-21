@@ -6,7 +6,7 @@ namespace RestApiLabb1.Models
     public class JobExperience
     {
         [Key]
-        public int Id { get; set; }
+        public int JobId { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -22,7 +22,7 @@ namespace RestApiLabb1.Models
         public int Year { get; set; }
 
         // Foreign key
-        public int PersonalInfoId { get; set; }
+        public int PersonalInfoId_Fk { get; set; }
 
         [JsonIgnore]
         public PersonInfo PersonalInfo { get; set; }

@@ -6,7 +6,7 @@ namespace RestApiLabb1.Models
     public class PersonInfo
     {
         [Key]
-        public int Id { get; set; }
+        public int PersonId { get; set; }
 
         [Required]
         [MaxLength(35)]

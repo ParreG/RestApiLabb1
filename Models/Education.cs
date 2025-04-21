@@ -6,7 +6,7 @@ namespace RestApiLabb1.Models
     public class Education
     {
         [Key]
-        public int Id { get; set; }
+        public int EducationId { get; set; }
 
         [Required]
         [MaxLength(200)]
@@ -20,7 +20,7 @@ namespace RestApiLabb1.Models
         public DateOnly? EndDate { get; set; }
 
         // Foreign key
-        public int PersonalInfoId { get; set; }
+        public int PersonalInfoId_Fk { get; set; }
 
         [JsonIgnore]
         public PersonInfo PersonalInfo { get; set; }

@@ -18,13 +18,13 @@ namespace RestApiLabb1.Data
             modelBuilder.Entity<PersonInfo>()
             .HasMany(p => p.Educations)
             .WithOne(e => e.PersonalInfo)
-            .HasForeignKey(e => e.PersonalInfoId)
+            .HasForeignKey(e => e.PersonalInfoId_Fk)
             .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<PersonInfo>()
                 .HasMany(p => p.JobExperiences)
                 .WithOne(j => j.PersonalInfo)
-                .HasForeignKey(j => j.PersonalInfoId)
+                .HasForeignKey(j => j.PersonalInfoId_Fk)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
