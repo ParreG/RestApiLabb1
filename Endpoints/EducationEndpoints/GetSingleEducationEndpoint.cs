@@ -37,7 +37,7 @@ namespace RestApiLabb1.Endpoints.EducationEndpoints
 
                 return Results.Ok(respons);
 
-            }).WithTags("Utbildning");
+            }).WithTags("2. Utbildning");
         }
     }
 }

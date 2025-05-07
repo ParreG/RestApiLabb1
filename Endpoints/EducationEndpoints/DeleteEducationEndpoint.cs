@@ -23,7 +23,7 @@ namespace RestApiLabb1.Endpoints.EducationEndpoints
 
                 return Results.Ok($"Utbildningen {education.SchoolName}, {education.Degree} med id {educationId}, har raderats för {education.PersonalInfo.Name} med id {personId}.");
 
-            }).WithTags("Utbildning");
+            }).WithTags("2. Utbildning");
         }
     }
 }

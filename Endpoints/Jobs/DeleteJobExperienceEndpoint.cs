@@ -22,7 +22,7 @@ namespace RestApiLabb1.Endpoints.Jobs
                 await context.SaveChangesAsync();
 
                 return Results.Ok($"Jobberfarenheten {job.JobTitle} med id {jobId}, har raderats för {job.PersonalInfo.Name} med id: {personId}");
-            }).WithTags("Jobb");
+            }).WithTags("3. Jobb");
         }
     }
 }

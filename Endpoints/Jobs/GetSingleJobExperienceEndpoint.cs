@@ -35,7 +35,7 @@ namespace RestApiLabb1.Endpoints.Jobs
 
                 return Results.Ok(respons);
 
-            }).WithTags("Jobb");
+            }).WithTags("3. Jobb");
         }
     }
 }
