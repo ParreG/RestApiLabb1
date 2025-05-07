@@ -52,7 +52,7 @@ namespace RestApiLabb1.Endpoints.Jobs
                 await context.SaveChangesAsync();
                 return Results.Ok(respons);
 
-            }).WithTags("Jobb");
+            }).WithTags("3. Jobb");
         }
     }
 }

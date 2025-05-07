@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using RestApiLabb1.Data;
 using RestApiLabb1.Endpoints.Education;
 using RestApiLabb1.Endpoints.EducationEndpoints;
+using RestApiLabb1.Endpoints.GithubEndpoints;
 using RestApiLabb1.Endpoints.Jobs;
 using RestApiLabb1.Endpoints.Person;
 using RestApiLabb1.Services;
@@ -49,20 +50,19 @@ namespace RestApiLabb1
             GetAllPersonEndpoint.RegisterFindAllEndpoint(app);
             AddPersonEndpoint.RegisterNewPersonEndpoint(app);
 
-
-            AddEducationEndpoint.RegisterAddEducationEndpoint(app);
             GetAllEducationsForPersonEndpoint.RegisterGetAllEdcationByID(app);
-            DeleteEducationEndpoint.RegisterDeleteEducationEndpoint(app);
-            ChangeEducationEndpoint.RegisterChangeEducationEndpoint(app);
             GetSingleEducationEndpoint.RegisterSingleEducationByIdEndpoint(app);
+            AddEducationEndpoint.RegisterAddEducationEndpoint(app);
+            ChangeEducationEndpoint.RegisterChangeEducationEndpoint(app);
+            DeleteEducationEndpoint.RegisterDeleteEducationEndpoint(app);
 
-            JobExperienceEndpoints.RegisterJobExperienceEndpoints(app);
-            DeleteJobExperienceEndpoint.RegisterDeleteJobEndpoint(app);
             GetAllJobExperiencesForPersonEndpoint.RegisterGetJobExperienceById(app);
             GetSingleJobExperienceEndpoint.RegisterGetJobExperieceById(app);
+            JobExperienceEndpoints.RegisterJobExperienceEndpoints(app);
             ChangeJobExperienceEndpoint.RegisterJobExperienceChangeEndpoint(app);
+            DeleteJobExperienceEndpoint.RegisterDeleteJobEndpoint(app);
 
-
+            GithubRepoEndpoint.RegisterGithubEndpoint(app);
 
             app.Run();
 

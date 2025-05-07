@@ -42,7 +42,7 @@ namespace RestApiLabb1.Endpoints.Education
                 await context.SaveChangesAsync();
 
                 return Results.Created($"/api/educations/{education.EducationId}", response);
-            }).WithTags("Utbildning");
+            }).WithTags("2. Utbildning");
         }
     }
 }

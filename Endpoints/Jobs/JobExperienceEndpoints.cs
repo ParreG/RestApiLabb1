@@ -38,7 +38,7 @@ namespace RestApiLabb1.Endpoints.Jobs
 
                 return Results.Created($"/api/educations/{jobexperience.JobId}", response);
 
-            }).WithTags("Jobb");
+            }).WithTags("3. Jobb");
         }
     }
 }
